@@ -4,13 +4,15 @@
 
 @{
     // TODO #3 - Use the same list display from Views/Search/Index.cshtml
-    <ul>
-            @foreach (Dictionary<string, string> row in ViewBag.jobs)
+    @foreach (Dictionary<string, string> row in ViewBag.jobs)
+    {
+        <table class="job-listing">
+            @foreach (KeyValuePair<string, string> kvpair in row)
             {
-                foreach (KeyValuePair <string, string> kvpair in row)
-                {
-                    <li>@kvpair</li>
-                }
+
+                <tr><td>@kvpair.Key</td> <td>@kvpair.Value</td></tr>
             }
-        </ul>
+        </table>
+
+    }
 }

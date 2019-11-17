@@ -29,7 +29,6 @@
 
 @if (ViewBag.jobs != null)
 {
-    //TODO #2 - Loop over jobs dictionary and display all job fields
     <h3>@ViewBag.jobs.Count Result(s)</h3>
 
 
@@ -39,7 +38,7 @@
         @foreach (KeyValuePair<string, string> kvpair in row)
         {
             
-                <tr><td>@kvpair.Key</td> <td>@kvpair.Value</td></tr>
+                <tr><td>@kvpair.Key.ToUpper()</td> <td>@kvpair.Value</td></tr>
         }
         </table>
 
